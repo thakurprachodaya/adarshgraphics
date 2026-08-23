@@ -3,425 +3,31 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Adarsh Graphics — Printing &amp; Graphics Studio, Chinchani</title>
-<meta name="description" content="Adarsh Graphics — proprietorship printing and graphics studio at Chinchani, Taluka Dahanu, District Palghar, Maharashtra. Offset & digital printing, wedding cards, banners, stickers, logo design.">
-
+<title>Adarsh Graphics — Outdoor Advertising &amp; Media Solutions</title>
+<meta name="description" content="Adarsh Graphics — outdoor advertising and media solutions. Hoardings, glow sign boards, railway advertising, branding, signage and flex printing in Dahanu, Palghar.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,900&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Sans+Devanagari:wght@400;500;600&display=swap" rel="stylesheet">
-
-<style>
-  :root{
-    --paper:#F8F6F3;
-    --paper-deep:#EFEBE4;
-    --ink:#241B3A;
-    --ink-soft:#5C5570;
-    --navy:#4A2E82;
-    --stamp-red:#E4423C;
-    --cyan:#159B9B;
-    --magenta:#D6247A;
-    --yellow:#F2A71B;
-    --key:#241B3A;
-    --line: rgba(23,26,43,0.14);
-    --radius: 4px;
-    --maxw: 720px;
-    font-size: 16px;
-  }
-
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    margin:0;
-    background:var(--paper);
-    color:var(--ink);
-    font-family:'IBM Plex Sans', system-ui, sans-serif;
-    -webkit-font-smoothing:antialiased;
-    line-height:1.5;
-  }
-
-  .marathi{font-family:'IBM Plex Sans Devanagari','IBM Plex Sans', sans-serif;}
-
-  ::selection{ background:var(--yellow); color:var(--ink); }
-
-  a{ color:inherit; }
-
-  .wrap{
-    max-width:var(--maxw);
-    margin:0 auto;
-    padding:0 22px;
-    position:relative;
-  }
-
-  /* ---------- crop / registration marks ---------- */
-  .crop{
-    position:absolute;
-    width:18px;
-    height:18px;
-    pointer-events:none;
-    opacity:.55;
-    z-index:2;
-  }
-  .crop::before,.crop::after{
-    content:"";
-    position:absolute;
-    background:var(--ink-soft);
-  }
-  .crop::before{ width:100%; height:1px; top:50%; left:0; }
-  .crop::after{ width:1px; height:100%; left:50%; top:0; }
-  .crop-circle{
-    position:absolute; inset:3px;
-    border:1px solid var(--ink-soft);
-    border-radius:50%;
-  }
-  .crop.tl{ top:10px; left:10px; }
-  .crop.tr{ top:10px; right:10px; }
-  .crop.bl{ bottom:10px; left:10px; }
-  .crop.br{ bottom:10px; right:10px; }
-
-  /* ---------- CMYK color bar divider ---------- */
-  .colorbar{
-    display:flex;
-    width:100%;
-    height:7px;
-  }
-  .colorbar span{ flex:1; }
-  .colorbar .c{ background:var(--cyan); }
-  .colorbar .m{ background:var(--magenta); }
-  .colorbar .y{ background:var(--yellow); }
-  .colorbar .k{ background:var(--key); }
-
-  /* ---------- top bar ---------- */
-  .topbar{
-    position:sticky; top:0; z-index:30;
-    background:rgba(236,234,226,.92);
-    backdrop-filter:blur(6px);
-    border-bottom:1px solid var(--line);
-  }
-  .topbar .wrap{
-    display:flex; align-items:center; justify-content:space-between;
-    padding-top:10px; padding-bottom:10px;
-  }
-  .brandmark{ display:flex; align-items:center; gap:10px; }
-  .mark{
-    width:38px; height:38px; border-radius:50%;
-    border:1.5px solid var(--navy);
-    overflow:hidden;
-    display:flex; align-items:center; justify-content:center;
-    position:relative; flex-shrink:0;
-    background:#fff;
-  }
-  .mark img{ width:100%; height:100%; object-fit:cover; }
-  .brand-name{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:12.5px;
-    letter-spacing:.06em;
-    text-transform:uppercase;
-    color:var(--navy);
-  }
-  .top-actions{ display:flex; gap:8px; }
-  .icon-btn{
-    width:36px; height:36px;
-    border-radius:50%;
-    border:1px solid var(--navy);
-    display:flex; align-items:center; justify-content:center;
-    text-decoration:none;
-    transition:transform .15s ease, background .15s ease;
-  }
-  .icon-btn:hover{ background:var(--navy); }
-  .icon-btn:hover svg{ stroke:var(--paper); }
-  .icon-btn svg{ width:16px; height:16px; stroke:var(--navy); transition:stroke .15s ease; }
-  .icon-btn:active{ transform:scale(.92); }
-
-  /* ---------- hero ---------- */
-  .hero{
-    position:relative;
-    padding:56px 0 40px;
-    overflow:hidden;
-  }
-  .sr-only{
-    position:absolute; width:1px; height:1px;
-    padding:0; margin:-1px; overflow:hidden;
-    clip:rect(0,0,0,0); white-space:nowrap; border:0;
-  }
-  .hero-logo{
-    width:112px;
-    height:112px;
-    object-fit:contain;
-    display:block;
-    margin:0 0 22px -6px;
-    border-radius:8px;
-  }
-  .eyebrow{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:11.5px;
-    letter-spacing:.14em;
-    text-transform:uppercase;
-    color:var(--ink-soft);
-    display:flex; align-items:center; gap:10px;
-    margin-bottom:18px;
-  }
-  .eyebrow .dot{ width:6px; height:6px; border-radius:50%; background:var(--stamp-red); flex-shrink:0; }
-
-  h1.title{
-    font-family:'Fraunces', serif;
-    font-weight:800;
-    font-optical-sizing:auto;
-    font-size:clamp(2.6rem, 11vw, 4.2rem);
-    line-height:0.98;
-    letter-spacing:-.01em;
-    margin:0 0 14px;
-    color:var(--navy);
-  }
-  .title em{
-    font-style:italic;
-    font-weight:600;
-    color:var(--stamp-red);
-  }
-
-  .hero-marathi{
-    font-size:17px;
-    color:var(--ink-soft);
-    margin:0 0 22px;
-  }
-
-  .locline{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:12px;
-    letter-spacing:.06em;
-    color:var(--ink-soft);
-    text-transform:uppercase;
-    margin:0 0 30px;
-    padding-top:14px;
-    border-top:1px dashed var(--line);
-  }
-
-  .cta-row{
-    display:flex;
-    flex-wrap:wrap;
-    gap:10px;
-    margin-bottom:34px;
-  }
-  .btn{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:13px;
-    letter-spacing:.04em;
-    text-transform:uppercase;
-    text-decoration:none;
-    padding:13px 18px;
-    border-radius:2px;
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    border:1.5px solid var(--navy);
-    transition:transform .15s ease, background .15s ease, color .15s ease;
-  }
-  .btn-solid{ background:var(--navy); color:var(--paper); }
-  .btn-solid:hover{ background:var(--ink); }
-  .btn-ghost{ background:transparent; color:var(--navy); }
-  .btn-ghost:hover{ background:var(--navy); color:var(--paper); }
-  .btn:active{ transform:scale(.97); }
-  .btn svg{ width:14px; height:14px; }
-
-  /* ---------- sections generic ---------- */
-  section{ position:relative; padding:52px 0; }
-  section.bordered{ border-top:1px solid var(--line); }
-
-  h2.h2{
-    font-family:'Fraunces', serif;
-    font-weight:700;
-    font-size:clamp(1.7rem, 6vw, 2.3rem);
-    color:var(--navy);
-    margin:0 0 18px;
-    letter-spacing:-.005em;
-  }
-
-  p.lead{
-    font-size:16px;
-    color:var(--ink-soft);
-    max-width:56ch;
-    margin:0 0 8px;
-  }
-
-  /* ---------- about ---------- */
-  .about-grid{
-    display:grid;
-    gap:22px;
-    margin-top:26px;
-  }
-  .spec{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:11.5px;
-    color:var(--ink-soft);
-    display:flex;
-    justify-content:space-between;
-    padding:10px 0;
-    border-bottom:1px dashed var(--line);
-    text-transform:uppercase;
-    letter-spacing:.04em;
-  }
-  .spec span:last-child{ color:var(--navy); text-align:right; }
-
-  /* ---------- services ---------- */
-  .svc-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:12px;
-    margin-top:28px;
-  }
-  .svc-card{
-    background:var(--paper-deep);
-    border:1px solid var(--line);
-    border-radius:var(--radius);
-    padding:16px 14px 14px;
-    position:relative;
-    opacity:0;
-    transform:translateY(10px);
-    transition:transform .18s ease, box-shadow .18s ease;
-  }
-  .svc-card.in{ opacity:1; transform:none; }
-  .svc-card:hover{ box-shadow:0 6px 18px rgba(20,31,59,.12); transform:translateY(-2px); }
-  .plate-tag{
-    position:absolute; top:10px; right:10px;
-    width:20px; height:20px;
-    border-radius:50%;
-    display:flex; align-items:center; justify-content:center;
-    font-family:'IBM Plex Mono', monospace;
-    font-size:9.5px; font-weight:600;
-    color:#fff;
-  }
-  .svc-icon{ width:26px; height:26px; margin-bottom:14px; stroke:var(--navy); fill:none; stroke-width:1.4; }
-  .svc-card h3{
-    font-family:'IBM Plex Sans', sans-serif;
-    font-size:14.5px;
-    font-weight:600;
-    margin:0;
-    color:var(--navy);
-    line-height:1.3;
-    padding-right:20px;
-  }
-
-  .tag-c{ background:var(--cyan); }
-  .tag-m{ background:var(--magenta); }
-  .tag-y{ background:var(--yellow); color:var(--ink); }
-  .tag-k{ background:var(--key); }
-
-  /* ---------- why ---------- */
-  .why-list{ margin-top:26px; display:grid; gap:22px; }
-  .why-item{ display:flex; gap:16px; align-items:flex-start; }
-  .why-num{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:11px;
-    color:var(--paper);
-    background:var(--navy);
-    width:26px; height:26px;
-    border-radius:50%;
-    display:flex; align-items:center; justify-content:center;
-    flex-shrink:0;
-    margin-top:2px;
-  }
-  .why-item h3{
-    font-family:'IBM Plex Sans', sans-serif;
-    font-size:15.5px; font-weight:600;
-    margin:0 0 4px; color:var(--navy);
-  }
-  .why-item p{ margin:0; color:var(--ink-soft); font-size:14.5px; }
-
-  /* ---------- contact ---------- */
-  .contact-card{
-    margin-top:26px;
-    border:1px solid var(--line);
-    border-radius:var(--radius);
-    overflow:hidden;
-    background:var(--paper-deep);
-  }
-  .addr-block{ padding:20px 18px; }
-  .addr-block .label{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:10.5px;
-    letter-spacing:.1em;
-    text-transform:uppercase;
-    color:var(--ink-soft);
-    margin-bottom:6px;
-  }
-  .addr-block address{
-    font-style:normal;
-    font-family:'IBM Plex Mono', monospace;
-    font-size:13.5px;
-    line-height:1.6;
-    color:var(--navy);
-    margin-bottom:16px;
-  }
-  .hours-row{
-    display:flex; justify-content:space-between;
-    font-family:'IBM Plex Mono', monospace;
-    font-size:12.5px;
-    color:var(--ink-soft);
-    border-top:1px dashed var(--line);
-    padding-top:12px;
-  }
-  .map-embed{ width:100%; height:220px; border:0; display:block; filter:grayscale(.15) contrast(1.02); }
-
-  .social-row{
-    display:flex; gap:10px; margin-top:18px;
-  }
-  .social-btn{
-    flex:1;
-    display:flex; align-items:center; justify-content:center; gap:8px;
-    padding:13px;
-    border:1.5px solid var(--navy);
-    border-radius:2px;
-    text-decoration:none;
-    font-family:'IBM Plex Mono', monospace;
-    font-size:12.5px;
-    letter-spacing:.04em;
-    text-transform:uppercase;
-    color:var(--navy);
-    transition:background .15s ease, color .15s ease;
-  }
-  .social-btn:hover{ background:var(--navy); color:var(--paper); }
-  .social-btn svg{ width:15px; height:15px; }
-
-  /* ---------- footer ---------- */
-  footer{
-    padding:34px 0 46px;
-    position:relative;
-  }
-  .foot-row{
-    display:flex; justify-content:space-between; align-items:flex-start;
-    font-family:'IBM Plex Mono', monospace;
-    font-size:10.5px;
-    color:var(--ink-soft);
-    letter-spacing:.04em;
-    text-transform:uppercase;
-    padding-top:20px;
-  }
-  .foot-brand{ font-family:'Fraunces', serif; font-size:17px; color:var(--navy); font-weight:700; text-transform:none; letter-spacing:0; margin-bottom:6px;}
-  .foot-addr{ text-transform:none; line-height:1.6; }
-
-  .reveal{ opacity:0; transform:translateY(14px); transition:opacity .5s ease, transform .5s ease; }
-  .reveal.in{ opacity:1; transform:none; }
-
-  @media (min-width:600px){
-    .svc-grid{ grid-template-columns:1fr 1fr; }
-    .about-grid{ grid-template-columns: 1.1fr .9fr; align-items:start; }
-  }
-
-  @media (prefers-reduced-motion: reduce){
-    html{ scroll-behavior:auto; }
-    .reveal, .svc-card{ opacity:1; transform:none; transition:none; }
-  }
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
 
-<!-- ============ TOP BAR ============ -->
-<div class="topbar">
-  <div class="wrap">
-    <div class="brandmark">
-      <div class="mark"><img src="assets/adarsh-graphics-logo.webp" alt="Adarsh Graphics logo"></div>
-      <div class="brand-name">Adarsh Graphics</div>
-    </div>
-    <div class="top-actions">
+<div class="logo-bar">
+  <a class="logo-bar-link" href="index.html">
+    <img class="logo-bar-img" src="assets/adarsh-graphics-logo.webp" alt="Adarsh Graphics logo">
+  </a>
+</div>
+<header class="topnav">
+  <div class="topnav-inner">
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="nav-links">
+      <a href="index.html" class="active">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="enquiry.html" class="nav-cta">Enquiry</a>
+    </nav>
+    <div class="nav-actions">
       <a class="icon-btn" href="tel:+918793007889" aria-label="Call Adarsh Graphics">
         <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
       </a>
@@ -430,190 +36,166 @@
       </a>
     </div>
   </div>
-</div>
-
-<!-- ============ HERO ============ -->
-<header class="hero">
-  <div class="crop tl"></div>
-  <div class="crop tr"></div>
-  <div class="wrap">
-    <img class="hero-logo" src="assets/adarsh-graphics-logo.webp" alt="Adarsh Graphics logo">
-    <h1 class="sr-only">Adarsh Graphics</h1>
-
-    <div class="cta-row">
-      <a class="btn btn-solid" href="tel:+911234567890">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        Call the Studio
-      </a>
-      <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&query=Adarsh+Graphics+Chinchani+Dahanu+Palghar+Maharashtra+401501" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        Get Directions
-      </a>
-    </div>
-  </div>
-  <div class="colorbar"><span class="c"></span><span class="m"></span><span class="y"></span><span class="k"></span></div>
 </header>
 
-<!-- ============ ABOUT ============ -->
-<section class="bordered">
-  <div class="wrap reveal">
-    <div class="eyebrow"><span class="dot"></span>About</div>
-    <h2 class="h2">Creative thinking, printed right.</h2>
-    <div class="about-grid">
-      <p class="lead">
-        Adarsh Graphics has been the go-to name for printing and design in Chinchani, quietly turning ideas into paper, flex and stationery for the families, shops and events of Dahanu taluka. What started as a small printing counter has grown into a full graphics studio — where a design is sketched, corrected and sent to press without ever leaving the building.
-      </p>
-      <p class="lead">
-        We work close to home and close to our customers: a shopkeeper needing bill books by evening, a family planning a wedding card months in advance, a school ordering certificates for its annual day. Every order gets the same attention — a proof you can hold in your hand before a single sheet goes to press.
-      </p>
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow"><span class="dot"></span>Outdoor Advertising &amp; Media Solutions</div>
+    <h1 class="title">Make Your Brand<br>Impossible to Miss</h1>
+    <p class="hero-lead">Powerful outdoor advertising solutions that put your brand in front of the right audience. From high-impact hoardings and glow sign boards to railway and transit advertising, we help businesses build visibility, attract attention and create lasting brand recall.</p>
+    <div class="cta-row">
+      <a class="btn btn-solid" href="enquiry.html">Get a Quote</a>
+      <a class="btn btn-ghost" href="services.html">Explore Our Services</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT TEASER ============ -->
+<section>
+  <div class="wrap reveal two-col">
+    <div>
+      <div class="eyebrow left"><span class="dot"></span>About Us</div>
+      <h2 class="h2">Your Brand Deserves to Be Seen</h2>
+      <p class="lead">We are an outdoor advertising and media solutions company helping businesses connect with their audience through strategic, high-visibility advertising spaces.</p>
+      <p class="lead">Our focus is simple — provide the right advertising platform, the right location and professional execution to deliver maximum visibility for every campaign. With a commitment to quality, transparency and timely service, we work closely with our clients to understand their objectives and deliver advertising solutions that support their brand growth.</p>
+      <div class="cta-row left" style="margin-top:18px;">
+        <a class="btn btn-ghost" href="about.html">Know More About Us</a>
+      </div>
+    </div>
+    <div>
+      <div class="why-list" style="margin-top:8px;">
+        <div class="why-item"><div class="why-check"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></div><p>Strategic advertising locations</p></div>
+        <div class="why-item"><div class="why-check"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></div><p>High-visibility media solutions</p></div>
+        <div class="why-item"><div class="why-check"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></div><p>Professional campaign execution</p></div>
+        <div class="why-item"><div class="why-check"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></div><p>Transparent communication</p></div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- ============ SERVICES ============ -->
-<section class="bordered">
+<section class="alt">
   <div class="wrap reveal">
-    <div class="eyebrow"><span class="dot"></span>Our Process</div>
-    <h2 class="h2">Everything that goes to press.</h2>
-    <p class="lead">Design and printing under one roof — each job colour-tagged below the way a press separates a plate.</p>
+    <div class="eyebrow left"><span class="dot"></span>Our Services</div>
+    <h2 class="h2">Advertising Solutions Designed for Maximum Visibility</h2>
 
     <div class="svc-grid">
-
-      <div class="svc-card"><div class="plate-tag tag-c">C</div>
-        <svg class="svc-icon" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="1"/><circle cx="8" cy="12" r="2"/><path d="M14 9h4M14 12h4M14 15h3"/></svg>
-        <h3>Offset &amp; Digital Printing</h3>
+      <div class="svc-card">
+        <div class="svc-icon-wrap ic-1"><svg class="svc-icon" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="10" rx="1"/><path d="M6 19h4M14 19h4M9 15v4M15 15v4"/></svg></div>
+        <h3>Outdoor Hoardings</h3>
+        <p class="svc-desc">Large-format outdoor advertising in high-traffic locations, visible to thousands daily.</p>
       </div>
-
-      <div class="svc-card"><div class="plate-tag tag-m">M</div>
-        <svg class="svc-icon" viewBox="0 0 24 24"><path d="M4 4h11l5 5v11H4z"/><path d="M15 4v5h5"/><path d="M8 14h8M8 17h5"/></svg>
-        <h3>Wedding &amp; Invitation Cards</h3>
+      <div class="svc-card">
+        <div class="svc-icon-wrap ic-2"><svg class="svc-icon" viewBox="0 0 24 24"><path d="M9 18h6M12 3v1M5.6 5.6l.7.7M18.4 5.6l-.7.7M4 13a8 8 0 1 1 16 0c0 3-2 4-2 6H6c0-2-2-3-2-6z"/></svg></div>
+        <h3>Glow Sign Boards</h3>
+        <p class="svc-desc">Attractive, highly visible illuminated signage that keeps your business noticed after sunset.</p>
       </div>
-
-      <div class="svc-card"><div class="plate-tag tag-y">Y</div>
-        <svg class="svc-icon" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="10" rx="1"/><path d="M7 7v10M17 7v10"/></svg>
-        <h3>Visiting Cards &amp; Letterheads</h3>
+      <div class="svc-card">
+        <div class="svc-icon-wrap ic-3"><svg class="svc-icon" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="15" rx="2"/><path d="M4 13h16M8 21l1-3M16 21l-1-3"/></svg></div>
+        <h3>Railway Advertising</h3>
+        <p class="svc-desc">Reach a large, diverse audience through advertising across railway stations and transit.</p>
       </div>
-
-      <div class="svc-card"><div class="plate-tag tag-k">K</div>
-        <svg class="svc-icon" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="1"/><path d="M3 17l5-4 4 3 4-5 5 6"/></svg>
-        <h3>Flex, Banners &amp; Hoardings</h3>
+      <div class="svc-card">
+        <div class="svc-icon-wrap ic-4"><svg class="svc-icon" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="1"/><path d="M7 21h10M12 17v4"/></svg></div>
+        <h3>Platform Boards</h3>
+        <p class="svc-desc">Target commuters with placements positioned in high-footfall railway environments.</p>
       </div>
-
-      <div class="svc-card"><div class="plate-tag tag-c">C</div>
-        <svg class="svc-icon" viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" rx="1"/><rect x="13" y="4" width="7" height="7" rx="1"/><rect x="4" y="13" width="7" height="7" rx="1"/><rect x="13" y="13" width="7" height="7" rx="1"/></svg>
-        <h3>Stickers &amp; Labels</h3>
+      <div class="svc-card">
+        <div class="svc-icon-wrap ic-1"><svg class="svc-icon" viewBox="0 0 24 24"><path d="M4 20V9l8-5 8 5v11"/><path d="M4 20h16M9 20v-6h6v6"/></svg></div>
+        <h3>Bus Shelter Advertising</h3>
+        <p class="svc-desc">Connect with pedestrians, commuters and local audiences at bus shelters.</p>
       </div>
-
-      <div class="svc-card"><div class="plate-tag tag-m">M</div>
-        <svg class="svc-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12a4 4 0 1 1 4 4"/></svg>
-        <h3>Logo &amp; Graphic Design</h3>
+      <div class="svc-card">
+        <div class="svc-icon-wrap ic-2"><svg class="svc-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12a4 4 0 1 1 4 4"/></svg></div>
+        <h3>Branding &amp; Signage</h3>
+        <p class="svc-desc">Professional branding and signage that strengthens your physical presence.</p>
       </div>
+    </div>
 
-      <div class="svc-card"><div class="plate-tag tag-y">Y</div>
-        <svg class="svc-icon" viewBox="0 0 24 24"><path d="M6 4h9l3 3v13H6z"/><path d="M9 12h6M9 16h6M9 8h3"/></svg>
-        <h3>Bill Books &amp; Stationery</h3>
-      </div>
-
-      <div class="svc-card"><div class="plate-tag tag-k">K</div>
-        <svg class="svc-icon" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1"/><circle cx="9" cy="12" r="2.5"/><path d="M15 9l4 3-4 3"/></svg>
-        <h3>Photo Printing &amp; Lamination</h3>
-      </div>
-
+    <div class="cta-row left" style="margin-top:32px;">
+      <a class="btn btn-ghost" href="services.html">View All Services</a>
     </div>
   </div>
 </section>
 
-<!-- ============ WHY US ============ -->
-<section class="bordered">
+<!-- ============ WHY CHOOSE US ============ -->
+<section>
   <div class="wrap reveal">
-    <div class="eyebrow"><span class="dot"></span>Why Print With Us</div>
-    <h2 class="h2">Small studio, no shortcuts.</h2>
+    <div class="eyebrow left"><span class="dot"></span>Why Choose Us?</div>
+    <h2 class="h2">Visibility. Impact. Results.</h2>
     <div class="why-list">
-      <div class="why-item">
-        <div class="why-num">1</div>
-        <div><h3>Design and print, one roof</h3><p>Your graphic is designed, corrected and printed in the same studio, so nothing is lost between the two.</p></div>
-      </div>
-      <div class="why-item">
-        <div class="why-num">2</div>
-        <div><h3>Nothing prints without your OK</h3><p>Every order gets a proof for your approval before it goes to press — what you see is what you get.</p></div>
-      </div>
+      <div class="why-item"><div class="why-check"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></div><p>Strategic advertising locations</p></div>
+      <div class="why-item"><div class="why-check"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></div><p>High-visibility media solutions</p></div>
+      <div class="why-item"><div class="why-check"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></div><p>Professional campaign execution</p></div>
+      <div class="why-item"><div class="why-check"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></div><p>Customized advertising packages</p></div>
+      <div class="why-item"><div class="why-check"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></div><p>Competitive pricing</p></div>
+      <div class="why-item"><div class="why-check"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></div><p>Transparent communication</p></div>
+      <div class="why-item"><div class="why-check"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></div><p>Reliable and timely service</p></div>
+      <div class="why-item"><div class="why-check"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></div><p>Solutions tailored to your marketing objectives</p></div>
     </div>
   </div>
 </section>
 
-<!-- ============ CONTACT ============ -->
-<section class="bordered">
+<!-- ============ CTA BANNER ============ -->
+<section>
   <div class="wrap reveal">
-    <div class="eyebrow"><span class="dot"></span>Visit the Studio</div>
-    <h2 class="h2">Come by, or reach us online.</h2>
-
-    <div class="contact-card">
-      <iframe class="map-embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d937.9348447283656!2d72.68535474442707!3d19.893223935069926!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1786882334614!5m2!1sen!2sin"
-        title="Map to Adarsh Graphics, Chinchani"></iframe>
-      <div class="addr-block">
-        <div class="label">Address</div>
-        <address>At Post Chinchani<br>Taluka Dahanu, District Palghar<br>Maharashtra – 401501</address>
-        <div class="hours-row">
-          <span>Mon – Sat</span>
-          <span>9:30 AM – 8:00 PM</span>
-        </div>
+    <div class="cta-banner">
+      <h2>Ready to Take Your Brand to the Next Level?</h2>
+      <p>Let us help you find the right advertising space for your business.</p>
+      <div class="cta-row">
+        <a class="btn btn-solid" href="enquiry.html">Send an Enquiry</a>
       </div>
-    </div>
-
-    <div class="social-row">
-      <a class="social-btn" href="https://www.facebook.com/100066404533368/" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12z"/></svg>
-        Facebook
-      </a>
-      <a class="social-btn" href="https://www.instagram.com/adarsh.graphics/" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1"/></svg>
-        Instagram
-      </a>
     </div>
   </div>
 </section>
 
 <!-- ============ FOOTER ============ -->
 <footer>
-  <div class="crop bl"></div>
-  <div class="crop br"></div>
-  <div class="colorbar"><span class="c"></span><span class="m"></span><span class="y"></span><span class="k"></span></div>
   <div class="wrap">
-    <div class="foot-row">
+    <div class="foot-grid">
       <div>
         <div class="foot-brand">Adarsh Graphics</div>
-        <div class="foot-addr">At Post Chinchani, Tal. Dahanu<br>Dist. Palghar, Maharashtra – 401501</div>
+        <div class="foot-tagline">Outdoor Advertising &amp; Media Solutions</div>
+        <p class="foot-desc">Helping brands achieve greater visibility through strategic outdoor and transit advertising.</p>
       </div>
+      <div class="foot-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="enquiry.html">Enquiry</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Our Services</h4>
+        <ul>
+          <li><a href="services.html">Hoardings</a></li>
+          <li><a href="services.html">Glow Sign Boards</a></li>
+          <li><a href="services.html">Railway Advertising</a></li>
+          <li><a href="services.html">Platform Boards</a></li>
+          <li><a href="services.html">Bus Shelter Advertising</a></li>
+          <li><a href="services.html">Branding &amp; Signage</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+918793007889">87930 07889</a></li>
+          <li><a href="mailto:adarshgraphic27@gmail.com">adarshgraphic27@gmail.com</a></li>
+          <li>Adarsh Graphics, Chinchani Raut Stop, Tal. Dahanu, Dist. Palghar, Maharashtra 401503</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Adarsh Graphics. All Rights Reserved.</span>
+      <span>Creative thinking...</span>
     </div>
   </div>
 </footer>
 
-<script>
-  // Reveal-on-scroll, respecting reduced motion
-  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    const io = new IntersectionObserver((entries)=>{
-      entries.forEach(e=>{
-        if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
-      });
-    }, { threshold: 0.12 });
-
-    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-
-    const cards = document.querySelectorAll('.svc-card');
-    const io2 = new IntersectionObserver((entries)=>{
-      entries.forEach((e,i)=>{
-        if(e.isIntersecting){
-          setTimeout(()=>e.target.classList.add('in'), i%4 * 60);
-          io2.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.12 });
-    cards.forEach(el=>io2.observe(el));
-  } else {
-    document.querySelectorAll('.reveal, .svc-card').forEach(el=>el.classList.add('in'));
-  }
-</script>
-
+<script src="assets/script.js"></script>
 </body>
 </html>
